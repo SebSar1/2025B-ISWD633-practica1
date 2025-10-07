@@ -6,10 +6,19 @@ docker exec <nombre contenedor> <comando> <argumentos opcionales>
 ```
 # COMPLETAR
 ### ¿Para qué se usa el comando ls?
+Sirve para listar el contenido de un directorio, mostrando tanto el nombre como el tipo del archivo o directorios adicionales.
 ### ¿Para qué sirve el argumento -l junto al comando ls?
+Sirve para mostrar el contenido de un directorio, proporcionando información detallada como los permisos de archivo, propietario, grupo, tamaño, y fecha de modificación de cada archivo o directorio. 
 ### Usar el contenedor de jenkins creado previamente y ejecutar el comando ls con el argumento -l
+```
+docker exec -i jenkins-web ls -l
+```
+
 # COMPLETAR
 # COLOCAR UNA CAPTURA DE PANTALLA
+<img width="632" height="501" alt="image" src="https://github.com/user-attachments/assets/184d6c1e-1748-43cc-9baf-9801e2ea5eba" />
+
+
 
 ### Para ejecutar un shell interactivo en un contenedor de Docker especificado.
 El comando **docker exec** te permite acceder a la sesión shell de un contenedor en ejecución, estarás dentro del contenedor y podrás ejecutar comandos como si estuvieras en una terminal normal. 
@@ -44,6 +53,7 @@ Ejecutar
 whoami
 ```
 # COLOCAR UNA CAPTURA DE PANTALLA
+<img width="633" height="161" alt="image" src="https://github.com/user-attachments/assets/ece5837c-d0fa-43e0-9447-5396bb879992" />
 
 **Si se visualiza el mensaje command not found, considerar**
 El problema se debe a que no se ha asignado un terminal de salida al contenedor al ejecutar el comando. Cuando usas docker exec -i jenkins-server /bin/bash en Windows, el comando se ejecuta pero no hay un terminal asignado para mostrar la salida del comando ls.
@@ -64,8 +74,14 @@ docker exec -it <nombre contenedor> <programa o comando>
 ### Ahora puedes acceder al contenedor de jenkins y obtener la contraseña ubicada en /var/jenkins_home/secrets/initialAdminPassword
 
 # COMPLETAR
-
+```
+docker exec -it jenkins-web cat /var/jenkins_home/secrets/initialAdminPassword 
+```
+Cat es para abrir el archivo
 ### Colocar una captura de pantalla de la ventana que aparece después de colocar la contraseña.
+<img width="1072" height="69" alt="image" src="https://github.com/user-attachments/assets/3569ce8b-f5d7-48c1-a455-d9a50a452bf2" />
+
+<img width="2622" height="965" alt="image" src="https://github.com/user-attachments/assets/1fa7c6cc-d2ed-48f6-9a68-1316e3dc9cdf" />
 
 **Para este punto no es necesario continuar con la instalación de Jenkins**
 
